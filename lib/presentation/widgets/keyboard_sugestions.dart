@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:predictive_text_input/core/constant/dimensions_constant.dart';
 
 
 class KeyboardSuggestionBar extends StatelessWidget {
@@ -18,8 +19,8 @@ class KeyboardSuggestionBar extends StatelessWidget {
     if (suggestions.isEmpty) return const SizedBox();
 
     return Container(
-      height: 56,
-      padding: const EdgeInsets.symmetric(horizontal: 8),
+      height: AppDimensions.px56,
+      padding: const EdgeInsets.symmetric(horizontal: AppDimensions.px8),
       decoration: BoxDecoration(
         color: Colors.grey.shade100,
         border: const Border(
@@ -31,14 +32,14 @@ class KeyboardSuggestionBar extends StatelessWidget {
 
           return Expanded(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 4),
+              padding: const EdgeInsets.symmetric(horizontal: AppDimensions.px4),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   elevation: 0,
                   backgroundColor: Colors.white,
                   foregroundColor: Colors.black87,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(AppDimensions.px10),
                   ),
                 ),
                 onPressed: () => onTap(word),

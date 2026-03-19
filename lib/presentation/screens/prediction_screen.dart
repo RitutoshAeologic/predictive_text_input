@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:predictive_text_input/core/constant/app_strings.dart';
+import 'package:predictive_text_input/core/constant/dimensions_constant.dart';
 import 'package:predictive_text_input/presentation/controllers/prediction_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:predictive_text_input/presentation/widgets/inline_suggestion.dart';
@@ -37,14 +39,14 @@ class _PredictiveScreenState extends State<PredictiveScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Predictive Text Demo")),
+      appBar: AppBar(title: const Text(AppStrings.appDemoTitle)),
       body: SafeArea(
         child: Column(
           children: [
             const SizedBox(height: 24),
 
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: AppDimensions.px16),
               child: Obx(
                 () => InlineSuggestionField(
                   controller: textController,

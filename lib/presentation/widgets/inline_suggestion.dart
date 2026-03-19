@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:predictive_text_input/core/constant/app_strings.dart';
+import 'package:predictive_text_input/core/constant/dimensions_constant.dart';
 
 
 
@@ -21,7 +23,7 @@ class InlineSuggestionField extends StatelessWidget {
       children: [
         /// suggestion overlay
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
+          padding: const EdgeInsets.symmetric(horizontal: AppDimensions.px12, vertical: AppDimensions.px14),
           child: RichText(
             text: TextSpan(
               children: [
@@ -43,7 +45,7 @@ class InlineSuggestionField extends StatelessWidget {
           controller: controller,
           onChanged: onChanged,
           decoration: InputDecoration(
-            hintText: "Type something...",
+            hintText: AppStrings.typeSomething,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(16),
             ),
