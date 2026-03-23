@@ -4,6 +4,7 @@ import 'package:predictive_text_input/presentation/screens/prediction_screen.dar
 import 'core/constant/app_strings.dart';
 import 'core/services/hive_services.dart';
 import 'data/data_source/local_data_sources.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() async {
 
@@ -20,14 +21,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: AppStrings.appName,
-      theme: ThemeData(
-        useMaterial3: true,
-        colorSchemeSeed: Colors.indigo,
+    return ScreenUtilInit(
+      designSize: const Size(430, 932),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      child: GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: AppStrings.appName,
+        theme: ThemeData(
+          useMaterial3: true,
+          colorSchemeSeed: Colors.indigo,
+        ),
+        home: const PredictiveScreen(),
       ),
-      home: const PredictiveScreen(),
     );
   }
 }

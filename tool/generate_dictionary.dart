@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
+
 void main() async {
   final file = File('google-10000-english.txt');
 
@@ -26,5 +28,5 @@ void main() async {
     const JsonEncoder.withIndent('  ').convert(dictionary),
   );
 
-  print("Dictionary generated with ${dictionary.length} words");
+  debugPrint("Dictionary generated with ${dictionary.length} words");
 }
